@@ -17,6 +17,7 @@
 
 package com.hollowsoft.library.slidingdrawer;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -295,11 +296,13 @@ public class SlidingDrawer extends ViewGroup {
 		measureChild(handleView, widthMeasureSpec, heightMeasureSpec);
 
 		if (isVertical) {
+
 			final int height = heightSpecSize - handleView.getMeasuredHeight() - topOffset;
 			contentView.measure(MeasureSpec.makeMeasureSpec(widthSpecSize, MeasureSpec.EXACTLY),
 					MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
 
 		} else {
+
 			final int width = widthSpecSize - handleView.getMeasuredWidth() - topOffset;
 			contentView.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY),
 					MeasureSpec.makeMeasureSpec(heightSpecSize, MeasureSpec.EXACTLY));
@@ -318,6 +321,7 @@ public class SlidingDrawer extends ViewGroup {
 			final int bottom) {
 
 		if (!isTracking) {
+
 			final int width = right - left;
 			final int height = bottom - top;
 
@@ -328,6 +332,7 @@ public class SlidingDrawer extends ViewGroup {
 			final int handleTop;
 
 			if (isVertical) {
+
 				handleLeft = (width - handleMeasuredWidth) / 2;
 				handleTop = isExpanded ? topOffset : height - handleMeasuredHeight + bottomOffset;
 
@@ -335,6 +340,7 @@ public class SlidingDrawer extends ViewGroup {
 						topOffset + handleMeasuredHeight + contentView.getMeasuredHeight());
 
 			} else {
+
 				handleLeft = isExpanded ? topOffset : width - handleMeasuredWidth + bottomOffset;
 				handleTop = (height - handleMeasuredHeight) / 2;
 
@@ -412,6 +418,7 @@ public class SlidingDrawer extends ViewGroup {
 		final int action = event.getAction();
 		if (action == MotionEvent.ACTION_DOWN) {
 			isTracking = true;
+
 			handleView.setPressed(true);
 
 			prepareContent();
@@ -642,6 +649,7 @@ public class SlidingDrawer extends ViewGroup {
 							topOffset + handleHeight + contentView.getMeasuredHeight());
 
 				} else {
+
 					final int handleWidth = handleView.getWidth();
 					final int width = getRight() - getLeft() - handleWidth - topOffset;
 
@@ -822,6 +830,7 @@ public class SlidingDrawer extends ViewGroup {
 	private void moveHandle(final int position) {
 
 		if (isVertical) {
+
 			if (position == DRAWER_EXPANDED) {
 				handleView.offsetTopAndBottom(topOffset - handleView.getTop());
 				invalidate();
@@ -833,6 +842,7 @@ public class SlidingDrawer extends ViewGroup {
 				invalidate();
 
 			} else {
+
 				final int top = handleView.getTop();
 				int deltaY = position - top;
 
@@ -869,6 +879,7 @@ public class SlidingDrawer extends ViewGroup {
 				invalidate();
 
 			} else {
+
 				final int left = handleView.getLeft();
 				int deltaX = position - left;
 
@@ -923,7 +934,8 @@ public class SlidingDrawer extends ViewGroup {
 	  * @author Igor Morais
 	  * @author Mor41s.1gor@gmail.com
 	  */
-	private class DrawerHandler extends Handler {
+	@SuppressLint("HandlerLeak")
+    private class DrawerHandler extends Handler {
 
 		/*
 		 * (non-Javadoc)
