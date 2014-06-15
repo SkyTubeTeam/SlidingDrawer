@@ -19,7 +19,6 @@ Example
 -------
 
 ##### In Layout
-
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -62,7 +61,6 @@ Example
 ```
 
 ##### In Java
-
 ```java
 public class MainScreen extends Activity {
 
