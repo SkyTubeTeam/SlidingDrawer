@@ -19,10 +19,11 @@ Example
 -------
 
 ##### In Layout
+
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/com.hollowsoft.example.slidingdrawer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_red_dark"
@@ -61,6 +62,7 @@ Example
 ```
 
 ##### In Java
+
 ```java
 public class MainScreen extends Activity {
 
