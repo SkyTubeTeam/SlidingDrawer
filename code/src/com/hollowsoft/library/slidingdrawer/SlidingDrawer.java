@@ -55,7 +55,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * the content:
  *
  * <pre class="prettyprint">
- * &lt;SlidingDrawer
+ * &lt;com.hollowsoft.library.slidingdrawer.SlidingDrawer
  *     android:id="@+id/drawer"
  *     android:layout_width="match_parent"
  *     android:layout_height="match_parent"
@@ -73,7 +73,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  *         android:layout_width="match_parent"
  *         android:layout_height="match_parent" /&gt;
  *
- * &lt;/SlidingDrawer&gt;
+ * &lt;/com.hollowsoft.library.slidingdrawer.SlidingDrawer&gt;
  * </pre>
  *
  * @attr ref R.styleable#SlidingDrawer_animateOnClick
@@ -96,21 +96,47 @@ import android.view.accessibility.AccessibilityNodeInfo;
  */
 public class SlidingDrawer extends ViewGroup {
 
+	/**
+	 *
+	 */
 	private static final int TAP_THRESHOLD = 6;
+
+	/**
+	 *
+	 */
 	private static final int VELOCITY_UNITS = 1000;
+
+	/**
+	 *
+	 */
 	private static final int ANIMATION_FRAME_DURATION = 1000 / 60;
 
+	/**
+	 *
+	 */
 	private static final float MAXIMUM_ACCELERATION = 2000.0f;
 
+	/**
+	 *
+	 */
 	private static final float MAXIMUM_MINOR_VELOCITY = 150.0f;
 	private static final float MAXIMUM_MAJOR_VELOCITY = 200.0f;
 	private static final float MAXIMUM_TAP_VELOCITY = 100.0f;
 
+	/**
+	 *
+	 */
 	private static final int MESSAGE_ANIMATE = 1000;
 
+	/**
+	 *
+	 */
 	private static final int DRAWER_EXPANDED = -10001;
 	private static final int DRAWER_COLLAPSED = -10002;
 
+	/**
+	 *
+	 */
 	public static final int ORIENTATION_HORIZONTAL = 0;
 	public static final int ORIENTATION_VERTICAL = 1;
 
@@ -120,12 +146,21 @@ public class SlidingDrawer extends ViewGroup {
 	private final int tapThreshold;
 	private final int velocityUnits;
 
+	/**
+	 *
+	 */
 	private final int maximumAcceleration;
 
+	/**
+	 *
+	 */
 	private final int maximumMinorVelocity;
 	private final int maximumMajorVelocity;
 	private final int maximumTapVelocity;
 
+	/**
+	 *
+	 */
 	private VelocityTracker velocityTracker;
 
 	/**
@@ -148,6 +183,9 @@ public class SlidingDrawer extends ViewGroup {
 	private final Rect invalidateRect = new Rect();
 	private final Rect frameRect = new Rect();
 
+	/**
+	 *
+	 */
 	private final Handler drawerHandler = new DrawerHandler();
 
 	/**
@@ -161,14 +199,23 @@ public class SlidingDrawer extends ViewGroup {
 	private final int handleResId;
 	private final int contentResId;
 
+	/**
+	 *
+	 */
 	private int handleWidth;
 	private int handleHeight;
 
+	/**
+	 *
+	 */
 	private boolean isExpanded;
 	private boolean isTracking;
 	private boolean isAnimating;
 	private boolean isLocked;
 
+	/**
+	 *
+	 */
 	private View handleView;
 	private View contentView;
 
@@ -290,7 +337,7 @@ public class SlidingDrawer extends ViewGroup {
 		final int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
 		if (widthSpecMode == MeasureSpec.UNSPECIFIED || heightSpecMode == MeasureSpec.UNSPECIFIED) {
-			throw new IllegalStateException("SlidingDrawer cannot have unspecified dimensions");
+			throw new IllegalStateException("The SlidingDrawer cannot have unspecified dimensions.");
 		}
 
 		measureChild(handleView, widthMeasureSpec, heightMeasureSpec);
@@ -694,6 +741,7 @@ public class SlidingDrawer extends ViewGroup {
 
 			animatedAcceleration = maximumAcceleration;
 			animatedVelocity = maximumMajorVelocity;
+
 			animationPosition = bottomOffset
 					+ (isVertical ? getHeight()
 					- handleHeight : getWidth() - handleWidth);
@@ -732,6 +780,7 @@ public class SlidingDrawer extends ViewGroup {
 		final float time = (currentTime - animationLastTime) / 1000.0f;
 
 		animatedVelocity = animatedVelocity + (animatedAcceleration * time);
+
 		animationPosition = animationPosition + (animatedVelocity * time)
 				+ (0.5f * animatedAcceleration * time * time);
 
@@ -758,6 +807,7 @@ public class SlidingDrawer extends ViewGroup {
 				moveHandle((int) animationPosition);
 
 				currentAnimationTime += ANIMATION_FRAME_DURATION;
+
 				drawerHandler.sendMessageAtTime(drawerHandler.obtainMessage(MESSAGE_ANIMATE),
 						currentAnimationTime);
 			}
@@ -786,6 +836,7 @@ public class SlidingDrawer extends ViewGroup {
 				}
 
 			} else {
+
 				animatedAcceleration = -maximumAcceleration;
 				if (velocity > 0) {
 					animatedVelocity = 0;
@@ -804,6 +855,7 @@ public class SlidingDrawer extends ViewGroup {
 				}
 
 			} else {
+
 				animatedAcceleration = -maximumAcceleration;
 				if (velocity > 0) {
 					animatedVelocity = 0;
@@ -857,6 +909,7 @@ public class SlidingDrawer extends ViewGroup {
 				handleView.getHitRect(frameRect);
 
 				invalidateRect.set(frameRect);
+
 				invalidateRect.union(frameRect.left, frameRect.top - deltaY, frameRect.right,
 						frameRect.bottom - deltaY);
 
@@ -894,6 +947,7 @@ public class SlidingDrawer extends ViewGroup {
 				handleView.getHitRect(frameRect);
 
 				invalidateRect.set(frameRect);
+
 				invalidateRect.union(frameRect.left - deltaX, frameRect.top, frameRect.right - deltaX,
 						frameRect.bottom);
 
@@ -905,10 +959,10 @@ public class SlidingDrawer extends ViewGroup {
 		}
 	}
 
-	 /**
-	  * @author Igor Morais
-	  * @author Mor41s.1gor@gmail.com
-	  */
+	/**
+	 * @author Igor Morais
+	 * @author Mor41s.1gor@gmail.com
+	 */
 	private class DrawerToggler implements OnClickListener {
 
 		/*
@@ -930,10 +984,10 @@ public class SlidingDrawer extends ViewGroup {
 		}
 	}
 
-	 /**
-	  * @author Igor Morais
-	  * @author Mor41s.1gor@gmail.com
-	  */
+	/**
+	 * @author Igor Morais
+	 * @author Mor41s.1gor@gmail.com
+	 */
 	@SuppressLint("HandlerLeak")
     private class DrawerHandler extends Handler {
 
@@ -958,7 +1012,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @param onDrawerOpenListener
 	 *            The listener to be notified when the drawer is opened.
 	 */
-	public void setOnDrawerOpenListener(final OnDrawerOpenListener onDrawerOpenListener) {
+	public final void setOnDrawerOpenListener(final OnDrawerOpenListener onDrawerOpenListener) {
 		this.onDrawerOpenListener = onDrawerOpenListener;
 	}
 
@@ -969,7 +1023,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @param onDrawerCloseListener
 	 *            The listener to be notified when the drawer is closed.
 	 */
-	public void setOnDrawerCloseListener(final OnDrawerCloseListener onDrawerCloseListener) {
+	public final void setOnDrawerCloseListener(final OnDrawerCloseListener onDrawerCloseListener) {
 		this.onDrawerCloseListener = onDrawerCloseListener;
 	}
 
@@ -981,7 +1035,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @param onDrawerScrollListener
 	 *            The listener to be notified when scrolling starts or stops.
 	 */
-	public void setOnDrawerScrollListener(final OnDrawerScrollListener onDrawerScrollListener) {
+	public final void setOnDrawerScrollListener(final OnDrawerScrollListener onDrawerScrollListener) {
 		this.onDrawerScrollListener = onDrawerScrollListener;
 	}
 
@@ -991,7 +1045,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @return The View reprenseting the handle of the drawer, identified by the
 	 *         "handle" id in XML.
 	 */
-	public View getHandle() {
+	public final View getHandle() {
 		return handleView;
 	}
 
@@ -1001,7 +1055,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @return The View reprenseting the content of the drawer, identified by
 	 *         the "content" id in XML.
 	 */
-	public View getContent() {
+	public final View getContent() {
 		return contentView;
 	}
 
@@ -1010,7 +1064,7 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @return True if the drawer is opened, false otherwise.
 	 */
-	public boolean isOpened() {
+	public final boolean isOpened() {
 		return isExpanded;
 	}
 
@@ -1019,7 +1073,7 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @return True if the drawer is scroller or flinging, false otherwise.
 	 */
-	public boolean isMoving() {
+	public final boolean isMoving() {
 		return isTracking || isAnimating;
 	}
 
@@ -1028,7 +1082,7 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @return True if the drawer is locked, false otherwise.
 	 */
-	public boolean isLocked() {
+	public final boolean isLocked() {
 		return isLocked;
 	}
 
@@ -1037,7 +1091,7 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @see #unlock()
 	 */
-	public void lock() {
+	public final void lock() {
 		isLocked = true;
 	}
 
@@ -1046,7 +1100,7 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @see #lock()
 	 */
-	public void unlock() {
+	public final void unlock() {
 		isLocked = false;
 	}
 
@@ -1057,7 +1111,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #toggle()
 	 * @see #animateOpen()
 	 */
-	public void open() {
+	public final void open() {
 		openDrawer();
 
 		invalidate();
@@ -1073,7 +1127,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #toggle()
 	 * @see #animateClose()
 	 */
-	public void close() {
+	public final void close() {
 		closeDrawer();
 
 		invalidate();
@@ -1089,7 +1143,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #animateClose()
 	 * @see #animateToggle()
 	 */
-	public void toggle() {
+	public final void toggle() {
 
 		if (isExpanded) {
 			closeDrawer();
@@ -1111,7 +1165,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #animateClose()
 	 * @see #animateToggle()
 	 */
-	public void animateOpen() {
+	public final void animateOpen() {
 		prepareContent();
 
 		if (onDrawerScrollListener != null) {
@@ -1136,7 +1190,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #animateOpen()
 	 * @see #animateToggle()
 	 */
-	public void animateClose() {
+	public final void animateClose() {
 		prepareContent();
 
 		if (onDrawerScrollListener != null) {
@@ -1159,7 +1213,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see #animateOpen()
 	 * @see #animateClose()
 	 */
-	public void animateToggle() {
+	public final void animateToggle() {
 
 		if (isExpanded) {
 			animateClose();
