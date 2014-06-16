@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 
 package com.hollowsoft.library.slidingdrawer;
@@ -21,7 +21,7 @@ package com.hollowsoft.library.slidingdrawer;
  * Listener invoked when the drawer is opened.
  * <p>
  * This class has ported and improved from the Android Open Source Project.
- * 
+ *
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
  *         <p>
