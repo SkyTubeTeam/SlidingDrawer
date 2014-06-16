@@ -19,7 +19,7 @@ package com.hollowsoft.example.slidingdrawer.view;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.hollowsoft.example.slidingdrawer.R;
 import com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener;
@@ -34,13 +34,15 @@ import com.hollowsoft.library.slidingdrawer.SlidingDrawer;
 public class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
 		OnDrawerCloseListener {
 
+	private static final String TAG = "SlidingDrawer";
+
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
-	protected void onCreate(final Bundle savedInstance) {
+	protected final void onCreate(final Bundle savedInstance) {
 		super.onCreate(savedInstance);
 		setContentView(R.layout.main_screen);
 
@@ -59,8 +61,8 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public void onScrollStarted() {
-		Toast.makeText(this, "onScrollStarted()", Toast.LENGTH_SHORT).show();
+	public final void onScrollStarted() {
+		Log.i(TAG, "onScrollStarted()");
 	}
 
 	/*
@@ -71,8 +73,8 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public void onScrollEnded() {
-		Toast.makeText(this, "onScrollEnded()", Toast.LENGTH_SHORT).show();
+	public final void onScrollEnded() {
+		Log.i(TAG, "onScrollEnded()");
 	}
 
 	/*
@@ -83,8 +85,8 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public void onDrawerOpened() {
-		Toast.makeText(this, "onDrawerOpened()", Toast.LENGTH_SHORT).show();
+	public final void onDrawerOpened() {
+		Log.i(TAG, "onDrawerOpened()");
 	}
 
 	/*
@@ -95,7 +97,7 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public void onDrawerClosed() {
-		Toast.makeText(this, "onDrawerClosed()", Toast.LENGTH_SHORT).show();
+	public final void onDrawerClosed() {
+		Log.i(TAG, "onDrawerClosed()");
 	}
 }
