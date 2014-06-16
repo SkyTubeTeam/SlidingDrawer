@@ -66,11 +66,11 @@ Example
 ```java
 public class MainScreen extends Activity {
 
-        /*
-         * (non-Javadoc)
-         *
-         * @see android.app.Activity#onCreate(android.os.Bundle)
-         */
+         /*
+          * (non-Javadoc)
+          *
+          * @see android.app.Activity#onCreate(android.os.Bundle)
+          */
          @Override
          protected void onCreate(final Bundle savedInstance) {
                  super.onCreate(savedInstance);
