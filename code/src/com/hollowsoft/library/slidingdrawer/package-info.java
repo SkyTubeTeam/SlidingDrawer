@@ -22,4 +22,3 @@
  * @author Mor41s.1gor@gmail.com
  */
 package com.hollowsoft.library.slidingdrawer;
-
