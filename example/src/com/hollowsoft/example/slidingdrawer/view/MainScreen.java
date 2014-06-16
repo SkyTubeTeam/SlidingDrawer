@@ -17,25 +17,85 @@
 
 package com.hollowsoft.example.slidingdrawer.view;
 
-import com.hollowsoft.example.slidingdrawer.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.hollowsoft.example.slidingdrawer.R;
+import com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener;
+import com.hollowsoft.library.slidingdrawer.OnDrawerOpenListener;
+import com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener;
+import com.hollowsoft.library.slidingdrawer.SlidingDrawer;
 
 /**
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
  */
-public class MainScreen extends Activity {
+public class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
+		OnDrawerCloseListener {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(final Bundle savedInstance) {
 		super.onCreate(savedInstance);
 		setContentView(R.layout.main_screen);
+
+		final SlidingDrawer slidingDrawer = (SlidingDrawer) findViewById(R.id.sliding_drawer);
+
+		slidingDrawer.setOnDrawerScrollListener(this);
+		slidingDrawer.setOnDrawerOpenListener(this);
+		slidingDrawer.setOnDrawerCloseListener(this);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollStarted
+	 * ()
+	 */
+	@Override
+	public void onScrollStarted() {
+		Toast.makeText(this, "onScrollStarted()", Toast.LENGTH_SHORT).show();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollEnded
+	 * ()
+	 */
+	@Override
+	public void onScrollEnded() {
+		Toast.makeText(this, "onScrollEnded()", Toast.LENGTH_SHORT).show();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerOpenListener#onDrawerOpened
+	 * ()
+	 */
+	@Override
+	public void onDrawerOpened() {
+		Toast.makeText(this, "onDrawerOpened()", Toast.LENGTH_SHORT).show();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener#onDrawerClosed
+	 * ()
+	 */
+	@Override
+	public void onDrawerClosed() {
+		Toast.makeText(this, "onDrawerClosed()", Toast.LENGTH_SHORT).show();
 	}
 }
