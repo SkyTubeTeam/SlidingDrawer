@@ -21,6 +21,7 @@ Example
 ##### In Layout
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -29,7 +30,16 @@ Example
     android:background="@android:color/holo_red_dark"
     tools:context=".MainScreen" >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/activity"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
     <com.hollowsoft.library.slidingdrawer.SlidingDrawer
+        android:id="@+id/sliding_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:content="@+id/drawer_content"
@@ -64,18 +74,75 @@ Example
 ##### In Java
 
 ```java
-public class MainScreen extends Activity {
+public class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
+		OnDrawerCloseListener {
 
-         /*
-          * (non-Javadoc)
-          *
-          * @see android.app.Activity#onCreate(android.os.Bundle)
-          */
-         @Override
-         protected void onCreate(final Bundle savedInstance) {
-                 super.onCreate(savedInstance);
-                 setContentView(R.layout.main_screen);
-         }
+	private static final String TAG = "SlidingDrawer";
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	protected final void onCreate(final Bundle savedInstance) {
+		super.onCreate(savedInstance);
+		setContentView(R.layout.main_screen);
+
+		final SlidingDrawer slidingDrawer = (SlidingDrawer) findViewById(R.id.sliding_drawer);
+
+		slidingDrawer.setOnDrawerScrollListener(this);
+		slidingDrawer.setOnDrawerOpenListener(this);
+		slidingDrawer.setOnDrawerCloseListener(this);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollStarted
+	 * ()
+	 */
+	@Override
+	public final void onScrollStarted() {
+		Log.i(TAG, "onScrollStarted()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollEnded
+	 * ()
+	 */
+	@Override
+	public final void onScrollEnded() {
+		Log.i(TAG, "onScrollEnded()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerOpenListener#onDrawerOpened
+	 * ()
+	 */
+	@Override
+	public final void onDrawerOpened() {
+		Log.i(TAG, "onDrawerOpened()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener#onDrawerClosed
+	 * ()
+	 */
+	@Override
+	public final void onDrawerClosed() {
+		Log.i(TAG, "onDrawerClosed()");
+	}
 }
 ```
 
