@@ -1,4 +1,4 @@
-SlidingDrawer
+![1] SlidingDrawer
 =============
 
 This widget has ported and improved from the Android Open Source Project.
@@ -96,3 +96,6 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[1]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/example/res/drawable-xhdpi/app_icon.png
