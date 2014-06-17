@@ -74,18 +74,75 @@ Example
 ##### In Java
 
 ```java
-public class MainScreen extends Activity {
+public class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
+		OnDrawerCloseListener {
 
-         /*
-          * (non-Javadoc)
-          *
-          * @see android.app.Activity#onCreate(android.os.Bundle)
-          */
-         @Override
-         protected void onCreate(final Bundle savedInstance) {
-                 super.onCreate(savedInstance);
-                 setContentView(R.layout.main_screen);
-         }
+	private static final String TAG = "SlidingDrawer";
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	protected final void onCreate(final Bundle savedInstance) {
+		super.onCreate(savedInstance);
+		setContentView(R.layout.main_screen);
+
+		final SlidingDrawer slidingDrawer = (SlidingDrawer) findViewById(R.id.sliding_drawer);
+
+		slidingDrawer.setOnDrawerScrollListener(this);
+		slidingDrawer.setOnDrawerOpenListener(this);
+		slidingDrawer.setOnDrawerCloseListener(this);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollStarted
+	 * ()
+	 */
+	@Override
+	public final void onScrollStarted() {
+		Log.i(TAG, "onScrollStarted()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollEnded
+	 * ()
+	 */
+	@Override
+	public final void onScrollEnded() {
+		Log.i(TAG, "onScrollEnded()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerOpenListener#onDrawerOpened
+	 * ()
+	 */
+	@Override
+	public final void onDrawerOpened() {
+		Log.i(TAG, "onDrawerOpened()");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see
+	 * com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener#onDrawerClosed
+	 * ()
+	 */
+	@Override
+	public final void onDrawerClosed() {
+		Log.i(TAG, "onDrawerClosed()");
+	}
 }
 ```
 
