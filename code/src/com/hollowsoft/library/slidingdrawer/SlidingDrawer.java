@@ -84,15 +84,13 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * @attr ref R.styleable#SlidingDrawer_handle
  * @attr ref R.styleable#SlidingDrawer_content
  *
- *       This class has ported and improved from the Android Open Source
- *       Project.
+ * <p> This class has ported and improved from the Android Open Source Project.
+ *
+ * @see <a href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.html">
+ *      SlidingDrawer</a>
  *
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
- *         <p>
- * @see <a
- *      href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.html">
- *      SlidingDrawer</a>
  */
 public class SlidingDrawer extends ViewGroup {
 
@@ -559,7 +557,7 @@ public class SlidingDrawer extends ViewGroup {
 
 					if (isVertical ? (isExpanded && top < tapThreshold + topOffset)
 							|| (!isExpanded && top > bottomOffset + getBottom() - getTop() - handleHeight - tapThreshold)
-							 : (isExpanded && left < tapThreshold + topOffset)
+							: (isExpanded && left < tapThreshold + topOffset)
 							|| (!isExpanded && left > bottomOffset + getRight() - getLeft() - handleWidth - tapThreshold)) {
 
 						if (allowSingleTap) {
@@ -744,7 +742,7 @@ public class SlidingDrawer extends ViewGroup {
 
 			animationPosition = bottomOffset
 					+ (isVertical ? getHeight()
-					- handleHeight : getWidth() - handleWidth);
+							- handleHeight : getWidth() - handleWidth);
 
 			moveHandle((int) animationPosition);
 
@@ -827,8 +825,8 @@ public class SlidingDrawer extends ViewGroup {
 		if (isExpanded) {
 
 			if (always || (velocity > maximumMajorVelocity
-					   || (position > topOffset + (isVertical ? handleHeight : handleWidth)
-					   && velocity > -maximumMajorVelocity))) {
+					|| (position > topOffset + (isVertical ? handleHeight : handleWidth)
+							&& velocity > -maximumMajorVelocity))) {
 
 				animatedAcceleration = maximumAcceleration;
 				if (velocity < 0) {
@@ -847,7 +845,7 @@ public class SlidingDrawer extends ViewGroup {
 
 			if (!always && (velocity > maximumMajorVelocity
 					|| (position > (isVertical ? getHeight()
-					  : getWidth()) / 2 && velocity > -maximumMajorVelocity))) {
+							: getWidth()) / 2 && velocity > -maximumMajorVelocity))) {
 
 				animatedAcceleration = maximumAcceleration;
 				if (velocity < 0) {
@@ -989,7 +987,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @author Mor41s.1gor@gmail.com
 	 */
 	@SuppressLint("HandlerLeak")
-    private class DrawerHandler extends Handler {
+	private class DrawerHandler extends Handler {
 
 		/*
 		 * (non-Javadoc)
