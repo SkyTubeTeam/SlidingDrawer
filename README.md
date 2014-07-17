@@ -74,9 +74,12 @@ Example
 ##### In Java
 
 ```java
-public class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
+public final class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
 		OnDrawerCloseListener {
 
+	/**
+	 *
+	 */
 	private static final String TAG = "SlidingDrawer";
 
 	/*
@@ -85,8 +88,9 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
-	protected final void onCreate(final Bundle savedInstance) {
+	protected void onCreate(final Bundle savedInstance) {
 		super.onCreate(savedInstance);
+
 		setContentView(R.layout.main_screen);
 
 		final SlidingDrawer slidingDrawer = (SlidingDrawer) findViewById(R.id.sliding_drawer);
@@ -104,7 +108,7 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public final void onScrollStarted() {
+	public void onScrollStarted() {
 		Log.i(TAG, "onScrollStarted()");
 	}
 
@@ -116,7 +120,7 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public final void onScrollEnded() {
+	public void onScrollEnded() {
 		Log.i(TAG, "onScrollEnded()");
 	}
 
@@ -128,7 +132,7 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public final void onDrawerOpened() {
+	public void onDrawerOpened() {
 		Log.i(TAG, "onDrawerOpened()");
 	}
 
@@ -140,7 +144,7 @@ public class MainScreen extends Activity implements OnDrawerScrollListener, OnDr
 	 * ()
 	 */
 	@Override
-	public final void onDrawerClosed() {
+	public void onDrawerClosed() {
 		Log.i(TAG, "onDrawerClosed()");
 	}
 }
