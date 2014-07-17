@@ -165,4 +165,4 @@ License
     limitations under the License.
 
 
-[1]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/example/res/drawable-xhdpi/app_icon.png
+[1]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/raw/android.png
