@@ -19,25 +19,24 @@ package com.hollowsoft.library.slidingdrawer;
 
 /**
  * Listener invoked when the drawer is scrolled.
- * <p>
- * This class has ported and improved from the Android Open Source Project.
+ *
+ * <p> This class has ported and improved from the Android Open Source Project.
+ *
+ * @see <a href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerScrollListener.html">
+ *      SlidingDrawer.OnDrawerScrollListener</a>
  *
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
- *         <p>
- * @see <a
- *      href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerScrollListener.html">
- *      SlidingDrawer.OnDrawerScrollListener</a>
  */
 public interface OnDrawerScrollListener {
 
-	/**
-	 * Invoked when the user starts dragging/flinging the drawer's handle.
-	 */
-	void onScrollStarted();
+    /**
+     * Invoked when the user starts dragging/flinging the drawer's handle.
+     */
+     void onScrollStarted();
 
-	/**
-	 * Invoked when the user stops dragging/flinging the drawer's handle.
-	 */
-	void onScrollEnded();
+    /**
+     * Invoked when the user stops dragging/flinging the drawer's handle.
+     */
+     void onScrollEnded();
 }

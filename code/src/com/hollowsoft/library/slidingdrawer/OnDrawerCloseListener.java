@@ -19,20 +19,19 @@ package com.hollowsoft.library.slidingdrawer;
 
 /**
  * Listener invoked when the drawer is closed.
- * <p>
- * This class has ported and improved from the Android Open Source Project.
+ *
+ * <p> This class has ported and improved from the Android Open Source Project.
+ *
+ * @see <a href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerCloseListener.html">
+ *      SlidingDrawer.OnDrawerCloseListener</a>
  *
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
- *         <p>
- * @see <a
- *      href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerCloseListener.html">
- *      SlidingDrawer.OnDrawerCloseListener</a>
  */
 public interface OnDrawerCloseListener {
 
-	/**
-	 * Invoked when the drawer becomes fully closed.
-	 */
-	void onDrawerClosed();
+    /**
+     * Invoked when the drawer becomes fully closed.
+     */
+     void onDrawerClosed();
 }

@@ -19,20 +19,19 @@ package com.hollowsoft.library.slidingdrawer;
 
 /**
  * Listener invoked when the drawer is opened.
- * <p>
- * This class has ported and improved from the Android Open Source Project.
+ *
+ * <p> This class has ported and improved from the Android Open Source Project.
+ *
+ * @see <a href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerOpenListener.html">
+ *      SlidingDrawer.OnDrawerOpenListener</a>
  *
  * @author Igor Morais
  * @author Mor41s.1gor@gmail.com
- *         <p>
- * @see <a
- *      href="http://http://developer.android.com/reference/android/widget/SlidingDrawer.OnDrawerOpenListener.html">
- *      SlidingDrawer.OnDrawerOpenListener</a>
  */
 public interface OnDrawerOpenListener {
 
-	/**
-	 * Invoked when the drawer becomes fully open.
-	 */
-	void onDrawerOpened();
+    /**
+     * Invoked when the drawer becomes fully open.
+     */
+     void onDrawerOpened();
 }
