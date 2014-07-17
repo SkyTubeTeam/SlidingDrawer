@@ -20,10 +20,4 @@ local.properties
 
 #Static Analysis
 .checkstyle
-.ruleset
 .pmd
-
-lint.xml
-findbugs_exclude.xml
-pmd_exclude.xml
-pmd_rules.xml
