@@ -28,7 +28,7 @@ Example
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_red_dark"
-    tools:context=".MainScreen" >
+    tools:context=".view.MainScreen" >
 
     <TextView
         android:layout_width="wrap_content"
