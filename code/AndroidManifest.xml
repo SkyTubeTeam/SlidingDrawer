@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hollowsoft.library.slidingdrawer"
     android:versionCode="1"
-    android:versionName="1.1" >
+    android:versionName="1.2" >
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="21" />
+    <uses-sdk android:minSdkVersion="11" />
 
-    <application android:allowBackup="true" />
+    <application android:allowBackup="false" />
 
 </manifest>
