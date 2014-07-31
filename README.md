@@ -151,6 +151,23 @@ public final class MainScreen extends Activity implements OnDrawerScrollListener
 ```
 
 
+Thanks
+------
+
+Awesome tools for code quality improvement:
+
+* [Android Lint](http://developer.android.com/tools/help/lint.html)
+* [Checkstyle](http://checkstyle.sourceforge.net)
+* [FindBugs](http://findbugs.sourceforge.net)
+* [PMD](http://pmd.sourceforge.net)
+
+
+Contact
+-------
+
+[My HomePage](http://igormorais.com) :)
+
+
 License
 -------
 
