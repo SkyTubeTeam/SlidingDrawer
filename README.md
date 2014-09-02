@@ -1,7 +1,7 @@
 ![1] SlidingDrawer
 ==================
 
-This widget has ported and improved from the Android Open Source Project.
+This widget has ported and improved from the `Android Open Source Project`.
 
 SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen,
 SlidingDrawer can be used vertically or horizontally.
@@ -12,13 +12,25 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 
 Inside an XML layout, SlidingDrawer must define the id of the handle and of the content.
 
-See more here [SlidingDrawer](http://developer.android.com/reference/android/widget/SlidingDrawer.html)
+See more here [SlidingDrawer](http://developer.android.com/reference/android/widget/SlidingDrawer.html).
+
+
+Setup
+-----
+
+You can clone this repository, at url:
+
+`git clone https://github.com/MoraisIgor/SlidingDrawer.git`
+
+And add it to your project reference.
+
+For more detailed information, look here [Referencing a library project](http://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject).
 
 
 Example
 -------
 
-##### In Layout
+##### In The Layout
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +83,7 @@ Example
 </RelativeLayout>
 ```
 
-##### In Java
+##### In The Code
 
 ```java
 public final class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
