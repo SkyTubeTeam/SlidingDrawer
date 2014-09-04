@@ -90,7 +90,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  *      SlidingDrawer</a>
  *
  * @author Igor Morais
- * @author Mor41s.1gor@gmail.com
+ * @author mor41s.1gor@gmail.com
  */
 public class SlidingDrawer extends ViewGroup {
 
@@ -496,7 +496,8 @@ public class SlidingDrawer extends ViewGroup {
 	 *
 	 * @see android.view.View#onTouchEvent(android.view.MotionEvent)
 	 */
-	@Override
+	@SuppressLint("ClickableViewAccessibility")
+    @Override
 	public boolean onTouchEvent(final MotionEvent event) {
 		if (isLocked) {
 			return true;
