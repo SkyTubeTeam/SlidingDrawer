@@ -8,9 +8,9 @@ SlidingDrawer can be used vertically or horizontally.
 
 A special widget composed of two children views: the handle, that the users drags, and the content, attached to the handle and dragged with it, SlidingDrawer should be used as an overlay inside layouts, this means SlidingDrawer should only be used inside of a FrameLayout or a RelativeLayout for instance.
 
-The size of the SlidingDrawer defines how much space the content will occupy once slid out so SlidingDrawer should usually use match_parent for both its dimensions.
+The size of the SlidingDrawer defines how much space the content will occupy once slid out so SlidingDrawer should usually use `match_parent` for both its dimensions.
 
-Inside an XML layout, SlidingDrawer must define the id of the handle and of the content.
+Inside a XML layout, SlidingDrawer must define the id of the handle and of the content.
 
 See more here [SlidingDrawer](http://developer.android.com/reference/android/widget/SlidingDrawer.html).
 
@@ -18,7 +18,7 @@ See more here [SlidingDrawer](http://developer.android.com/reference/android/wid
 Setup
 -----
 
-You can clone this repository, at url:
+You can clone this repository like this.
 
 `git clone https://github.com/MoraisIgor/SlidingDrawer.git`
 
@@ -179,7 +179,8 @@ Awesome tools for code quality improvement:
 Contact
 -------
 
-[My HomePage](http://igormorais.com) :)
+* [GitHub Page](http://moraisigor.github.io)
+* [Home Page](http://igormorais.com)
 
 
 License
