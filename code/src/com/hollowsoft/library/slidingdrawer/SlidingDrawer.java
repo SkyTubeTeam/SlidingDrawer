@@ -497,7 +497,7 @@ public class SlidingDrawer extends ViewGroup {
 	 * @see android.view.View#onTouchEvent(android.view.MotionEvent)
 	 */
 	@SuppressLint("ClickableViewAccessibility")
-    @Override
+	@Override
 	public boolean onTouchEvent(final MotionEvent event) {
 		if (isLocked) {
 			return true;
