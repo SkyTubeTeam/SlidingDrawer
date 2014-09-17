@@ -1,6 +1,8 @@
 ![1] SlidingDrawer
 ==================
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SlidingDrawer-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/765)
+
 This widget has ported and improved from the `Android Open Source Project`.
 
 SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen,
