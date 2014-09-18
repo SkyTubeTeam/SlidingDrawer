@@ -222,3 +222,5 @@ License
 
 
 [1]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/raw/android.png
+[2]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/raw/1.png
+[3]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/raw/2.png
