@@ -14,6 +14,7 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 
 Inside a XML layout, SlidingDrawer must define the id of the handle and of the content.
 
+================
 ![2] &nbsp; ![3]
 
 See more here [SlidingDrawer](http://developer.android.com/reference/android/widget/SlidingDrawer.html).
