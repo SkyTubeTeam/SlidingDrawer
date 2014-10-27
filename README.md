@@ -5,10 +5,10 @@
 
 This widget has ported and improved from the `Android Open Source Project`.
 
-SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen,
+SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.
 SlidingDrawer can be used vertically or horizontally.
 
-A special widget composed of two children views: the handle, that the users drags, and the content, attached to the handle and dragged with it, SlidingDrawer should be used as an overlay inside layouts, this means SlidingDrawer should only be used inside of a FrameLayout or a RelativeLayout for instance.
+A special widget composed of two children views: the handle, that the users drags, and the content, attached to the handle and dragged with it. SlidingDrawer should be used as an overlay inside layouts. This means SlidingDrawer should only be used inside of a `FrameLayout` or a `RelativeLayout` for instance.
 
 The size of the SlidingDrawer defines how much space the content will occupy once slid out so SlidingDrawer should usually use `match_parent` for both its dimensions.
 
@@ -192,13 +192,13 @@ License
 
 ```
     Copyright (c) 2014 HollowSoft @IgorMorais
-    
+
     Licensed under the Apache License, Version 2.0 (the “License”);
     you may not use this file except in compliance with the License.
-    
+
          You may obtain a copy of the License at
          http://www.apache.org/licenses/LICENSE-2.0
-         
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an “AS IS” BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -208,13 +208,13 @@ License
 
 ```
     Copyright (C) 2008 The Android Open Source Project
-    
+
     Licensed under the Apache License, Version 2.0 (the “License”);
     you may not use this file except in compliance with the License.
-    
+
          You may obtain a copy of the License at
          http://www.apache.org/licenses/LICENSE-2.0
-         
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an “AS IS” BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
