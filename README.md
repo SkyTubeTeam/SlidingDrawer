@@ -92,17 +92,9 @@ Example
 ```java
 public final class MainScreen extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener,
 		OnDrawerCloseListener {
-
-	/**
-	 *
-	 */
+	
 	private static final String TAG = "SlidingDrawer";
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
+	
 	@Override
 	protected void onCreate(final Bundle savedInstance) {
 		super.onCreate(savedInstance);
@@ -115,50 +107,22 @@ public final class MainScreen extends Activity implements OnDrawerScrollListener
 		slidingDrawer.setOnDrawerOpenListener(this);
 		slidingDrawer.setOnDrawerCloseListener(this);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollStarted
-	 * ()
-	 */
+	
 	@Override
 	public void onScrollStarted() {
 		Log.i(TAG, "onScrollStarted()");
 	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * com.hollowsoft.library.slidingdrawer.OnDrawerScrollListener#onScrollEnded
-	 * ()
-	 */
+	
 	@Override
 	public void onScrollEnded() {
 		Log.i(TAG, "onScrollEnded()");
 	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * com.hollowsoft.library.slidingdrawer.OnDrawerOpenListener#onDrawerOpened
-	 * ()
-	 */
+	
 	@Override
 	public void onDrawerOpened() {
 		Log.i(TAG, "onDrawerOpened()");
 	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * com.hollowsoft.library.slidingdrawer.OnDrawerCloseListener#onDrawerClosed
-	 * ()
-	 */
+	
 	@Override
 	public void onDrawerClosed() {
 		Log.i(TAG, "onDrawerClosed()");
