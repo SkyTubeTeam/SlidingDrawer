@@ -191,7 +191,7 @@ License
 -------
 
 ```
-    Copyright (c) 2014 HollowSoft @IgorMorais
+    Copyright (c) 2014 @Igor Morais
 
     Licensed under the Apache License, Version 2.0 (the “License”);
     you may not use this file except in compliance with the License.
