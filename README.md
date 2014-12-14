@@ -54,7 +54,7 @@ Example
         android:textColor="@android:color/white"
         android:textSize="25sp" />
 
-    <com.hollowsoft.library.slidingdrawer.SlidingDrawer
+    <com.hollowsoft.slidingdrawer.SlidingDrawer
         android:id="@+id/sliding_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,7 +82,7 @@ Example
             android:text="@string/content"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
-    </com.hollowsoft.library.slidingdrawer.SlidingDrawer>
+    </com.hollowsoft.slidingdrawer.SlidingDrawer>
 
 </RelativeLayout>
 ```
