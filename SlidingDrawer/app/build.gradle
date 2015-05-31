@@ -1,0 +1,139 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName '1.5.0'
+    }
+
+    buildTypes {
+
+        release {
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+}
+
+install {
+
+    repositories.mavenInstaller {
+
+        pom {
+
+            project {
+
+                packaging 'aar'
+
+                name 'SlidingDrawer'
+                description 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
+                url 'https://github.com/MoraisIgor/SlidingDrawer'
+
+                developers {
+
+                    developer {
+
+                        id 'MoraisIgor'
+                        name 'Igor Morais'
+                        email 'mor41s.1gor@gmail.com'
+                    }
+                }
+
+                licenses {
+
+                    license {
+
+                        name 'Apache Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+
+                scm {
+
+                    url 'https://github.com/MoraisIgor/SlidingDrawer'
+                    connection 'https://github.com/MoraisIgor/SlidingDrawer.git'
+                    developerConnection 'https://github.com/MoraisIgor/SlidingDrawer.git'
+                }
+            }
+        }
+    }
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+
+    classifier = 'sources'
+}
+
+artifacts {
+
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+
+    Properties properties = new Properties()
+
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    user = properties.getProperty('bintray.user')
+    key = properties.getProperty('bintray.key')
+
+    configurations = ['archives']
+
+    pkg {
+
+        repo = 'maven'
+
+        name = 'SlidingDrawer'
+        websiteUrl = 'https://github.com/MoraisIgor/SlidingDrawer'
+        vcsUrl = 'https://github.com/MoraisIgor/SlidingDrawer.git'
+        licenses = ['Apache Version 2.0']
+
+        publish = true
+
+        version {
+
+            gpg {
+
+                sign = true
+                passphrase = properties.getProperty('bintray.password')
+            }
+
+            /* mavenCentralSync {
+
+                sync = true
+                user = properties.getProperty('sonatype.user')
+                password = properties.getProperty('sonatype.password')
+                close = '1'
+            } */
+        }
+    }
+}
