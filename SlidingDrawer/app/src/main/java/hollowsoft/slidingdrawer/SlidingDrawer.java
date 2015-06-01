@@ -73,12 +73,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * &lt;/hollowsoft.slidingdrawer.SlidingDrawer&gt;
  * </pre>
  *
- * @attr ref android.R.styleable#SlidingDrawer_animateOnClick
- * @attr ref android.R.styleable#SlidingDrawer_allowSingleTap
- * @attr ref android.R.styleable#SlidingDrawer_topOffset
- * @attr ref android.R.styleable#SlidingDrawer_bottomOffset
- * @attr ref android.R.styleable#SlidingDrawer_orientation
- * @attr ref android.R.styleable#SlidingDrawer_handle
+ * @attr ref R.styleable#SlidingDrawer_animateOnClick
+ * @attr ref R.styleable#SlidingDrawer_allowSingleTap
+ * @attr ref R.styleable#SlidingDrawer_topOffset
+ * @attr ref R.styleable#SlidingDrawer_bottomOffset
+ * @attr ref R.styleable#SlidingDrawer_orientation
+ * @attr ref R.styleable#SlidingDrawer_handle
  * @attr ref R.styleable#SlidingDrawer_content
  */
 public class SlidingDrawer extends ViewGroup {
