@@ -53,7 +53,7 @@ install {
 
                     license {
 
-                        name 'Apache-2.0'
+                        name 'Apache Version 2.0'
                         url 'http://www.apache.org/licenses/LICENSE-2.0'
                     }
                 }
@@ -62,7 +62,7 @@ install {
 
                     developer {
 
-                        id 'moraisigor'
+                        id 'MoraisIgor'
                         name 'Igor Morais'
                         email 'mor41s.1gor@gmail.com'
                     }
@@ -114,18 +114,21 @@ bintray {
 
     configurations = ['archives']
 
+    publish = true
+
     pkg {
 
         repo = 'Maven'
 
-        name = 'slidingdrawer'
+        name = 'SlidingDrawer'
+        desc = 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
         websiteUrl = 'https://github.com/MoraisIgor/SlidingDrawer'
+        issueTrackerUrl = 'https://github.com/MoraisIgor/SlidingDrawer/issues'
         vcsUrl = 'https://github.com/MoraisIgor/SlidingDrawer.git'
         licenses = ['Apache-2.0']
+        labels = ['android']
 
-        publish = true
-
-        /* version {
+        version {
 
             gpg {
 
@@ -139,7 +142,7 @@ bintray {
                 user = properties.getProperty('sonatype.user')
                 password = properties.getProperty('sonatype.password')
                 close = '1'
-            }
-        } */
+            } */
+        }
     }
 }
