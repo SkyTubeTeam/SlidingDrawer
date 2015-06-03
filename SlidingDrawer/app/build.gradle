@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+project.archivesBaseName = 'slidingdrawer'
+
+version '1.5.0'
+
 android {
 
     compileSdkVersion 22
@@ -12,14 +16,14 @@ android {
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
-        versionName '1.5.0'
+        versionName version
     }
 
     buildTypes {
 
         release {
 
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,6 +32,8 @@ android {
 dependencies {
 
 }
+
+group = 'com.github.moraisigor'
 
 install {
 
@@ -43,22 +49,22 @@ install {
                 description 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
                 url 'https://github.com/MoraisIgor/SlidingDrawer'
 
-                developers {
-
-                    developer {
-
-                        id 'MoraisIgor'
-                        name 'Igor Morais'
-                        email 'mor41s.1gor@gmail.com'
-                    }
-                }
-
                 licenses {
 
                     license {
 
-                        name 'Apache Version 2.0'
+                        name 'Apache-2.0'
                         url 'http://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+
+                developers {
+
+                    developer {
+
+                        id 'moraisigor'
+                        name 'Igor Morais'
+                        email 'mor41s.1gor@gmail.com'
                     }
                 }
 
@@ -97,11 +103,11 @@ artifacts {
     archives sourcesJar
 }
 
+Properties properties = new Properties()
+
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 bintray {
-
-    Properties properties = new Properties()
-
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
     user = properties.getProperty('bintray.user')
     key = properties.getProperty('bintray.key')
@@ -110,16 +116,16 @@ bintray {
 
     pkg {
 
-        repo = 'maven'
+        repo = 'Maven'
 
-        name = 'SlidingDrawer'
+        name = 'slidingdrawer'
         websiteUrl = 'https://github.com/MoraisIgor/SlidingDrawer'
         vcsUrl = 'https://github.com/MoraisIgor/SlidingDrawer.git'
-        licenses = ['Apache Version 2.0']
+        licenses = ['Apache-2.0']
 
         publish = true
 
-        version {
+        /* version {
 
             gpg {
 
@@ -133,7 +139,7 @@ bintray {
                 user = properties.getProperty('sonatype.user')
                 password = properties.getProperty('sonatype.password')
                 close = '1'
-            } */
-        }
+            }
+        } */
     }
 }
