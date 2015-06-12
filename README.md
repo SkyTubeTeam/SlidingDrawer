@@ -70,9 +70,9 @@ Example
 ##### In Code
 
 ```java
-public class Drawer extends Activity implements OnDrawerOpenListener,
-                                                OnDrawerCloseListener,
-                                                OnDrawerScrollListener {
+public class DrawerActivity extends Activity implements OnDrawerOpenListener,
+                                                        OnDrawerCloseListener,
+                                                        OnDrawerScrollListener {
                                                 
     private static final String TAG = "Drawer";
     
