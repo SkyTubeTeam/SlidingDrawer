@@ -54,7 +54,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  *
  * <pre class="prettyprint">
  * &lt;hollowsoft.slidingdrawer.SlidingDrawer
- *     android:id="@+id/sliding_drawer"
+ *     android:id="@+id/drawer"
  *     android:layout_width="match_parent"
  *     android:layout_height="match_parent"
  *     android:handle="@+id/handle"
@@ -63,12 +63,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * &lt;ImageView
  *     android:id="@id/handle"
  *     android:layout_width="88dip"
- *     android:layout_height="44dip" /&gt;
+ *     android:layout_height="44dip"/&gt;
  *
  * &lt;GridView
  *     android:id="@id/content"
  *     android:layout_width="match_parent"
- *     android:layout_height="match_parent" /&gt;
+ *     android:layout_height="match_parent"/&gt;
  *
  * &lt;/hollowsoft.slidingdrawer.SlidingDrawer&gt;
  * </pre>
