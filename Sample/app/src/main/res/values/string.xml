@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Sliding Drawer</string>
+
+    <string name="handle">Handle</string>
+
+    <string name="content">Content</string>
+
+    <string name="screen_bottom">Bottom</string>
+    <string name="screen_left">Left</string>
+    <string name="screen_right">Right</string>
+    <string name="screen_top">Top</string>
+    <string name="screen_about">About</string>
+
+</resources>
