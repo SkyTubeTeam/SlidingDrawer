@@ -80,7 +80,7 @@ public class DrawerActivity extends Activity implements OnDrawerOpenListener,
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         
-        setContentView(R.layout.drawer);
+        setContentView(R.layout.drawer_activity);
         
         final SlidingDrawer drawer = (SlidingDrawer) view.findViewById(R.id.drawer);
         
