@@ -17,7 +17,7 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 Setup
 -----
 
-Put a new build rule on your `gradle.build` file.
+Put a new build rule on your `gradle.build` file. For example:
 
 ```
 dependencies {
@@ -115,7 +115,7 @@ public class DrawerActivity extends Activity implements OnDrawerOpenListener,
 Thanks
 ------
 
-Awesome tools for code quality improvement.
+Awesome tools for code quality improvement:
 
 * [Lint](http://developer.android.com/tools/help/lint.html)
 * [CheckStyle](http://checkstyle.sourceforge.net)
