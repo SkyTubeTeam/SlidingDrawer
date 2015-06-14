@@ -47,7 +47,7 @@ Example
         drawer:content="@+id/content">
         
         <TextView
-            android:id="@id/handle"
+            android:id="@+id/handle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:background="#01579B"
@@ -55,7 +55,7 @@ Example
             android:text="Handle"/>
             
         <TextView
-            android:id="@id/content"
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#00ACC1"
