@@ -74,7 +74,7 @@ public class DrawerActivity extends Activity implements OnDrawerOpenListener,
                                                         OnDrawerCloseListener,
                                                         OnDrawerScrollListener {
                                                 
-    private static final String TAG = "Drawer";
+    private static final String TAG = "DrawerActivity";
     
     @Override
     protected void onCreate(Bundle bundle) {
