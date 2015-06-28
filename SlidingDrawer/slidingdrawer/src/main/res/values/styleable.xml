@@ -6,14 +6,14 @@
         <attr name="allowSingleTap" format="boolean" />
         <attr name="topOffset" format="dimension" />
         <attr name="bottomOffset" format="dimension" />
-        <attr name="orientation" />
+        <!-- <attr name="orientation" /> -->
         <attr name="handle" format="reference" />
         <attr name="content" format="reference" />
     </declare-styleable>
 
-    <attr name="orientation">
+    <!-- <attr name="orientation">
         <enum name="horizontal" value="0" />
         <enum name="vertical" value="1" />
-    </attr>
+    </attr> -->
 
 </resources>
