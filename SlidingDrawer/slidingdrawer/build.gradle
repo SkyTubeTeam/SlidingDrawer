@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
 
-        minSdkVersion 16
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 1
         versionName version
