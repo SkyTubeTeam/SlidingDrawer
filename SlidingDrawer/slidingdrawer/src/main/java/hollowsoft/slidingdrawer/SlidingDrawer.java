@@ -200,7 +200,7 @@ public class SlidingDrawer extends ViewGroup {
         topOffset = (int) typedArray.getDimension(R.styleable.SlidingDrawer_topOffset, 0.0f);
         bottomOffset = (int) typedArray.getDimension(R.styleable.SlidingDrawer_bottomOffset, 0.0f);
 
-        vertical = typedArray.getInt(android.R.attr.orientation, ORIENTATION_VERTICAL) == ORIENTATION_VERTICAL;
+        vertical = typedArray.getInt(R.styleable.SlidingDrawer_android_orientation, ORIENTATION_VERTICAL) == ORIENTATION_VERTICAL;
 
         handleId = typedArray.getResourceId(R.styleable.SlidingDrawer_handle, 0);
 
