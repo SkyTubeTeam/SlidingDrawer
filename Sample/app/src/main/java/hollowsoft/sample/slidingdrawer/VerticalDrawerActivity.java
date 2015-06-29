@@ -1,10 +1,6 @@
 package hollowsoft.sample.slidingdrawer;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import hollowsoft.slidingdrawer.OnDrawerCloseListener;
 import hollowsoft.slidingdrawer.OnDrawerOpenListener;
@@ -17,19 +13,17 @@ public class VerticalDrawerActivity extends BaseAppCompatActivity implements OnD
 
     private static final String TAG = VerticalDrawerActivity.class.getSimpleName();
 
-    @Nullable
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
+    protected void onCreate(final Bundle bundle) {
+        super.onCreate(bundle);
 
-        final View view = inflater.inflate(R.layout.bottom_fragment, viewGroup, false);
+        setContentView(R.layout.bottom_fragment);
 
-        final SlidingDrawer drawer = (SlidingDrawer) view.findViewById(R.id.bottom_fragment_sliding_drawer_bottom_drawer);
+        final SlidingDrawer drawer = (SlidingDrawer) findViewById(R.id.bottom_fragment_sliding_drawer_bottom_drawer);
 
         drawer.setOnDrawerOpenListener(this);
         drawer.setOnDrawerCloseListener(this);
         drawer.setOnDrawerScrollListener(this);
-
-        return view;
     }
 
     @Override

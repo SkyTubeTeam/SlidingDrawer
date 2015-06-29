@@ -2,8 +2,30 @@
 <resources>
 
     <style name="Theme.Main" parent="Theme.AppCompat.Light">
-        <item name="android:textSize">20sp</item>
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+
+        <item name="actionBarTheme">@style/Theme.ActionBar</item>
+        <item name="actionBarStyle">@style/Theme.Style.ActionBar</item>
+        <item name="drawerArrowStyle">@style/Theme.DrawerArrow</item>
+
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="Theme.Style.ActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/Theme.ActionBar.Text</item>
+    </style>
+
+    <style name="Theme.ActionBar.Text" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.DrawerArrow" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
     </style>
 
 </resources>
