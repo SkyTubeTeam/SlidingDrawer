@@ -8,7 +8,7 @@
         android:id="@+id/right_fragment_sliding_drawer_right_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        drawer:orientation="horizontal"
+        android:orientation="horizontal"
         drawer:content="@+id/right_fragment_text_view_content"
         drawer:handle="@+id/right_fragment_text_view_handle">
 

@@ -1,54 +1,73 @@
 package hollowsoft.sample.slidingdrawer;
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MenuAdapter extends ArrayAdapter<Screen> {
+public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
-    public MenuAdapter(final Context context, final Screen[] screenArray) {
-        super(context, 0, screenArray);
+    private final OnMenuListener listener;
+    private final Menu[] menuArray;
+
+    public MenuAdapter(final OnMenuListener listener, final Menu[] menuArray) {
+
+        if (listener == null) {
+            throw new IllegalArgumentException("The listener cannot be null.");
+        }
+
+        this.listener = listener;
+        this.menuArray = menuArray;
     }
 
-    static class ViewHolder {
-        TextView name;
-        ImageView icon;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        public TextView textViewName;
+        public ImageView imageViewIcon;
+
+        public ViewHolder(final View view) {
+            super(view);
+
+            textViewName = (TextView) view.findViewById(R.id.menu_text_view_name);
+            imageViewIcon = (ImageView) view.findViewById(R.id.menu_image_view_icon);
+
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(final View view) {
+
+            final Menu menu = menuArray[getAdapterPosition()];
+
+            listener.onMenuSelect(menu);
+        }
     }
 
     @Override
-    public View getView(final int position, final View convertView, final ViewGroup parent) {
-        View view = convertView;
+    public ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
 
-        ViewHolder viewHolder;
+        final View view = LayoutInflater.from(viewGroup.getContext())
+                                        .inflate(R.layout.menu_item, viewGroup, false);
 
-        if (view == null) {
+        return new ViewHolder(view);
+    }
 
-            final LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
-                    Context.LAYOUT_INFLATER_SERVICE);
+    @Override
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
-            view = inflater.inflate(R.layout.menu_item, parent, false);
+        final Menu menu = menuArray[position];
 
-            viewHolder = new ViewHolder();
+        viewHolder.textViewName.setText(viewHolder.textViewName.getContext()
+                                                               .getResources()
+                                                               .getString(menu.getName()));
 
-            viewHolder.name = (TextView) view.findViewById(R.id.menu_text_view_name);
-            viewHolder.icon = (ImageView) view.findViewById(R.id.menu_image_view_icon);
+        viewHolder.imageViewIcon.setImageResource(menu.getIcon());
+    }
 
-            view.setTag(viewHolder);
-
-        } else {
-
-            viewHolder = (ViewHolder) view.getTag();
-        }
-
-        final Screen screen = getItem(position);
-
-        viewHolder.name.setText(getContext().getResources().getString(screen.getName()));
-        viewHolder.icon.setImageResource(screen.getIcon());
-
-        return view;
+    @Override
+    public int getItemCount() {
+        return menuArray.length;
     }
 }

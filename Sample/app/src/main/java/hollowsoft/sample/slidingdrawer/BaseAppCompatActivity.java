@@ -3,8 +3,17 @@ package hollowsoft.sample.slidingdrawer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class BaseActivity extends Activity implements Navigate {
+public class BaseAppCompatActivity extends AppCompatActivity implements Navigate {
+
+    @Override
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {

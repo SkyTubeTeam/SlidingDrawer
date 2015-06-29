@@ -1,31 +1,32 @@
 package hollowsoft.sample.slidingdrawer;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements OnMenuListener {
 
-    private ListView listView;
+    private static final Class<? extends Fragment> MAIN_FRAGMENT = MainFragment.class;
+
+    private RecyclerView recyclerView;
 
     private LinearLayout layoutContent;
 
     private DrawerLayout drawerLayout;
 
     private ActionBarDrawerToggle drawerToggle;
-
-    private Fragment currentFragment;
 
     private final Map<String, Fragment> fragmentMap = new HashMap<>();
 
@@ -42,17 +43,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void findViews() {
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.main_screen_drawer_layout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.main_activity_drawer_layout);
 
-        layoutContent = (LinearLayout) findViewById(R.id.main_screen_linear_layout_content);
+        layoutContent = (LinearLayout) findViewById(R.id.main_activity_linear_layout_content);
 
-        listView = (ListView) findViewById(R.id.main_screen_list_view_menu);
+        recyclerView = (RecyclerView) findViewById(R.id.main_activity_recycler_view_menu);
     }
 
     private void setupViews() {
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.app_name, R.string.app_name) {
 
@@ -67,41 +65,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onDrawerClosed(final View drawerView) {
                 super.onDrawerClosed(drawerView);
 
-                final String tag = currentFragment.getTag();
+                final String tag = getCurrentFragment().getTag();
 
-                if (tag.equals(Screen.BOTTOM.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_bottom);
+                if (tag.equals(Menu.VERTICAL_DRAWER.getTag())) {
+                    getSupportActionBar().setTitle(R.string.vertical_drawer_activity);
 
-                } else if (tag.equals(Screen.LEFT.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_left);
+                } else if (tag.equals(Menu.HORIZONTAL_DRAWER.getTag())) {
+                    getSupportActionBar().setTitle(R.string.horizontal_drawer_activity);
 
-                } else if (tag.equals(Screen.RIGHT.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_right);
-
-                } else if (tag.equals(Screen.TOP.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_top);
-
-                } else if (tag.equals(Screen.ABOUT.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_about);
+                } else if (tag.equals(Menu.ABOUT.getTag())) {
+                    getSupportActionBar().setTitle(R.string.about_activity);
                 }
             }
         };
 
         drawerLayout.setDrawerListener(drawerToggle);
 
-        listView.setAdapter(new MenuAdapter(this, Screen.values()));
-        listView.setOnItemClickListener(this);
+        recyclerView.setHasFixedSize(true);
 
-        final String fragmentName = Screen.BOTTOM.getViewClass().getName();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        currentFragment = Fragment.instantiate(this, fragmentName);
+        recyclerView.setAdapter(new MenuAdapter(this, Menu.values()));
 
-        getSupportActionBar().setTitle(R.string.screen_bottom);
-
-        getFragmentManager().beginTransaction()
-                .add(R.id.main_screen_relative_layout_fragment, currentFragment, fragmentName).commit();
-
-        fragmentMap.put(fragmentName, currentFragment);
+        addFragment(MAIN_FRAGMENT,
+                MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -117,33 +104,70 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onItemClick(final AdapterView<?> adapterView, final View view, final int position, final long id) {
+    public void onMenuSelect(final Menu menu) {
 
-        final Screen screen = Screen.getBy(position + 1);
+        drawerLayout.closeDrawer(layoutContent);
 
-        if (screen.isFragment()) {
+        if (menu.isDialog()) {
 
-            final FragmentManager fragmentManager = getFragmentManager();
 
-            final String fragmentName = screen.getViewClass().getName();
+        } else if (menu.isFragment()) {
 
-            final Fragment fragment = fragmentManager.findFragmentByTag(fragmentName);
+            if (!menu.getTag().equals(getCurrentFragment().getTag())) {
 
-            if (fragment == null) {
-
-                currentFragment = fragmentMap.get(fragmentName);
-
-                if (currentFragment == null) {
-                    currentFragment = Fragment.instantiate(this, fragmentName);
-
-                    fragmentMap.put(fragmentName, currentFragment);
-                }
-
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.main_screen_relative_layout_fragment, currentFragment, fragmentName).commit();
+                replaceFragment(menu.getMenuClass(), menu.getTag());
             }
 
-            drawerLayout.closeDrawer(layoutContent);
+        } else if (menu.isActivity()) {
+            startActivity(new Intent(this, menu.getMenuClass()));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(layoutContent);
+
+        } else if (getCurrentFragment().getTag().equals(MAIN_FRAGMENT.getSimpleName())) {
+
+            super.onBackPressed();
+
+        } else {
+
+            replaceFragment(MAIN_FRAGMENT,
+                    MAIN_FRAGMENT.getSimpleName());
+        }
+    }
+
+    private Fragment getCurrentFragment() {
+        return getFragmentManager().findFragmentById(R.id.main_activity_relative_layout_fragment_container);
+    }
+
+    private void addFragment(final Class<? extends Fragment> fragmentClass, final String tag) {
+
+        final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+        getFragmentManager().beginTransaction()
+                .add(R.id.main_activity_relative_layout_fragment_container, fragment, tag)
+                .commit();
+
+        fragmentMap.put(tag, fragment);
+    }
+
+    private void replaceFragment(final Class<?> fragmentClass, final String tag) {
+
+        Fragment fragment = fragmentMap.get(tag);
+
+        if (fragment == null) {
+
+            fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+            fragmentMap.put(tag, fragment);
+        }
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.main_activity_relative_layout_fragment_container, fragment, tag)
+                .commit();
     }
 }

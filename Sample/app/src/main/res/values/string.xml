@@ -1,15 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Sliding Drawer</string>
 
     <string name="handle">Handle</string>
-
     <string name="content">Content</string>
 
-    <string name="screen_bottom">Bottom</string>
-    <string name="screen_left">Left</string>
-    <string name="screen_right">Right</string>
-    <string name="screen_top">Top</string>
-    <string name="screen_about">About</string>
+    <string name="vertical_drawer_activity">Vertical</string>
+    <string name="horizontal_drawer_activity">Horizontal</string>
+    <string name="about_activity">About</string>
 
 </resources>

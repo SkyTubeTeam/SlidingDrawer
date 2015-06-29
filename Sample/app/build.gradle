@@ -27,5 +27,6 @@ android {
 dependencies {
 
     compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.github.moraisigor:slidingdrawer:1.5.1'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile 'com.github.moraisigor:slidingdrawer:1.5.2'
 }
