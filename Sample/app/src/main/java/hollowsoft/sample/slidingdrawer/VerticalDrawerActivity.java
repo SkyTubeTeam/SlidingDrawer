@@ -8,8 +8,8 @@ import hollowsoft.slidingdrawer.OnDrawerScrollListener;
 import hollowsoft.slidingdrawer.SlidingDrawer;
 
 public class VerticalDrawerActivity extends BaseAppCompatActivity implements OnDrawerOpenListener,
-                                                            OnDrawerCloseListener,
-                                                            OnDrawerScrollListener {
+                                                                             OnDrawerCloseListener,
+                                                                             OnDrawerScrollListener {
 
     private static final String TAG = VerticalDrawerActivity.class.getSimpleName();
 
@@ -17,9 +17,9 @@ public class VerticalDrawerActivity extends BaseAppCompatActivity implements OnD
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.bottom_fragment);
+        setContentView(R.layout.vertical_drawer_activity);
 
-        final SlidingDrawer drawer = (SlidingDrawer) findViewById(R.id.bottom_fragment_sliding_drawer_bottom_drawer);
+        final SlidingDrawer drawer = (SlidingDrawer) findViewById(R.id.vertical_drawer_activity_sliding_drawer_vertical_drawer);
 
         drawer.setOnDrawerOpenListener(this);
         drawer.setOnDrawerCloseListener(this);

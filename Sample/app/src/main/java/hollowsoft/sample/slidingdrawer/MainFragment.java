@@ -11,10 +11,6 @@ public class MainFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
-
-        final View view = inflater.inflate(R.layout.main_fragment, viewGroup, false);
-
-        return view;
+        return inflater.inflate(R.layout.main_fragment, viewGroup, false);
     }
-
 }

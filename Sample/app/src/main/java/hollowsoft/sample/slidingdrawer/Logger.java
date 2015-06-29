@@ -2,7 +2,7 @@ package hollowsoft.sample.slidingdrawer;
 
 import android.util.Log;
 
-public class Logger {
+public final class Logger {
 
     private Logger() {
 
