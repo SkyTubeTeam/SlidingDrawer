@@ -27,6 +27,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -179,8 +180,7 @@ public class SlidingDrawer extends ViewGroup {
      *        or can not be found in the theme. Can be 0 to not look for defaults.
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public SlidingDrawer(final Context context, final AttributeSet attributeSet, final int defStyleAttr,
-                         final int defStyleRes) {
+    public SlidingDrawer(final Context context, final AttributeSet attributeSet, final int defStyleAttr, final int defStyleRes) {
 
         super(context, attributeSet, defStyleAttr, defStyleRes);
 
@@ -234,6 +234,7 @@ public class SlidingDrawer extends ViewGroup {
 
     @Override
     protected void onFinishInflate() {
+        super.onFinishInflate();
 
         viewHandle = findViewById(handleId);
 
@@ -327,7 +328,7 @@ public class SlidingDrawer extends ViewGroup {
     }
 
     @Override
-    protected void dispatchDraw(final Canvas canvas) {
+    protected void dispatchDraw(@NonNull final Canvas canvas) {
         final long drawingTime = getDrawingTime();
 
         drawChild(canvas, viewHandle, drawingTime);
@@ -416,7 +417,7 @@ public class SlidingDrawer extends ViewGroup {
     }
 
     @Override
-    public boolean onTouchEvent(final MotionEvent event) {
+    public boolean onTouchEvent(@NonNull final MotionEvent event) {
 
         if (locked) {
             return true;
@@ -842,14 +843,14 @@ public class SlidingDrawer extends ViewGroup {
     }
 
     @Override
-    public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
+    public void onInitializeAccessibilityEvent(@NonNull final AccessibilityEvent event) {
         super.onInitializeAccessibilityEvent(event);
 
         event.setClassName(SlidingDrawer.class.getName());
     }
 
     @Override
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo nodeInfo) {
+    public void onInitializeAccessibilityNodeInfo(@NonNull final AccessibilityNodeInfo nodeInfo) {
         super.onInitializeAccessibilityNodeInfo(nodeInfo);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
