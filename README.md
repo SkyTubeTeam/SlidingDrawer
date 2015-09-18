@@ -22,7 +22,7 @@ Put a new build rule on your `gradle.build` file. For example:
 ```
 dependencies {
     
-    compile 'com.github.moraisigor:slidingdrawer:1.5.4'
+    compile 'com.github.moraisigor:slidingdrawer:1.5.5'
 }
 ```
 
