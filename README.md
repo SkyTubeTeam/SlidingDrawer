@@ -125,7 +125,7 @@ Awesome tools for code quality improvement:
 Contact
 -------
 
-* [Page](http://igormorais.com) :)
+* [My Page](http://igormorais.com)
 
 
 License
