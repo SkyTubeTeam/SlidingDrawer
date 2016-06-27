@@ -16,7 +16,7 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 Setup
 -----
 
-Put a new build rule on your `gradle.build` file. For example:
+Add this to your dependencies:
 
 ```
 dependencies {
@@ -125,7 +125,7 @@ Awesome tools for code quality improvement:
 Contact
 -------
 
-* [My Awesome Site](http://igormorais.com) :)
+* [Page](http://igormorais.com) :)
 
 
 License
