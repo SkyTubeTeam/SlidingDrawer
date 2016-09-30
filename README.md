@@ -69,23 +69,21 @@ Example
 ##### In Code
 
 ```java
-public class DrawerActivity extends Activity implements OnDrawerOpenListener,
-                                                        OnDrawerCloseListener,
-                                                        OnDrawerScrollListener {
+public class MainActivity extends Activity implements OnDrawerScrollListener, OnDrawerOpenListener, OnDrawerCloseListener {
                                                 
-    private static final String TAG = "DrawerActivity";
+    private static final String TAG = MainActivity.class.getSimpleName();
     
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         
-        setContentView(R.layout.drawer_activity);
+        setContentView(R.layout.main);
         
-        final SlidingDrawer drawer = (SlidingDrawer) view.findViewById(R.id.drawer);
+        final SlidingDrawer drawer = (SlidingDrawer) findViewById(R.id.drawer);
         
+        drawer.setOnDrawerScrollListener(this);
         drawer.setOnDrawerOpenListener(this);
         drawer.setOnDrawerCloseListener(this);
-        drawer.setOnDrawerScrollListener(this);
     }
     
     @Override
