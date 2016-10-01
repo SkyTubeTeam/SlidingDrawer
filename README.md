@@ -10,7 +10,7 @@ SlidingDrawer should be used as an overlay inside layouts. This means SlidingDra
 
 The size of the SlidingDrawer defines how much space the content will occupy once slid out so SlidingDrawer should usually use `match_parent` for both its dimensions.
 
-[See](http://developer.android.com/reference/android/widget/SlidingDrawer.html) :)
+[More](http://developer.android.com/reference/android/widget/SlidingDrawer.html) :)
 
 
 Setup
