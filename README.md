@@ -112,18 +112,13 @@ public class MainActivity extends Activity implements OnDrawerScrollListener, On
 Thanks
 ------
 
-Awesome tools for code quality improvement:
-
-* [Lint](http://developer.android.com/tools/help/lint.html)
-* [CheckStyle](http://checkstyle.sourceforge.net)
-* [FindBugs](http://findbugs.sourceforge.net)
-* [PMD](http://pmd.sourceforge.net)
+[Bruna Borges](https://www.behance.net/bubaborges) for the sample app layout.
 
 
 Contact
 -------
 
-* [My Page](http://igormorais.com)
+[Igor Morais](http://igormorais.com)
 
 
 License
