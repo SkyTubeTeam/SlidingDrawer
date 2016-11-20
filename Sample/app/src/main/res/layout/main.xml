@@ -15,17 +15,19 @@
             android:id="@+id/handle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="#01579B"
+            android:background="@color/purple"
             android:gravity="center"
-            android:text="Handle"/>
+            android:textSize="22sp"
+            android:text="HANDLE"/>
 
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00ACC1"
+            android:background="@color/grey"
+            android:textSize="22sp"
             android:gravity="center"
-            android:text="Content"/>
+            android:text="CONTENT"/>
 
     </hollowsoft.slidingdrawer.SlidingDrawer>
 
