@@ -112,7 +112,7 @@ public class MainActivity extends Activity implements OnDrawerScrollListener, On
 Thanks
 ------
 
-[Bruna Borges](https://www.behance.net/bubaborges) for the sample app layout.
+[]() for the sample app layout.
 
 
 Contact
