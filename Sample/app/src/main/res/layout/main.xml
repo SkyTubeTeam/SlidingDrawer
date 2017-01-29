@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:layout="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <hollowsoft.slidingdrawer.SlidingDrawer
         android:id="@+id/drawer"
@@ -12,23 +12,28 @@
         layout:handle="@+id/handle">
 
         <TextView
-            android:id="@+id/handle"
+            android:id="@id/handle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="@color/purple"
+            android:background="@color/dark_blue_grey"
             android:gravity="center"
-            android:textSize="22sp"
-            android:text="HANDLE"/>
+            android:text="@string/handle"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:textSize="22sp"
             android:gravity="center"
-            android:text="CONTENT"/>
+            android:text="@string/content"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </hollowsoft.slidingdrawer.SlidingDrawer>
 
-</LinearLayout>
+</RelativeLayout>
