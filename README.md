@@ -36,7 +36,8 @@ Example
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:layout="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f1582a">
     
     <hollowsoft.slidingdrawer.SlidingDrawer
         android:id="@+id/drawer"
@@ -49,9 +50,9 @@ Example
             android:id="@id/handle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="@color/dark_blue_grey"
+            android:background="#122631"
             android:gravity="center"
-            android:text="@string/handle"
+            android:text="Handle"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="20sp"
@@ -62,7 +63,7 @@ Example
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/content"
+            android:text="Content"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="20sp"
