@@ -13,7 +13,7 @@ import hollowsoft.slidingdrawer.SlidingDrawer;
 /**
  * @author Igor Morais
  */
-public class MainActivity extends AppCompatActivity implements OnDrawerScrollListener, OnDrawerOpenListener, OnDrawerCloseListener {
+public final class MainActivity extends AppCompatActivity implements OnDrawerScrollListener, OnDrawerOpenListener, OnDrawerCloseListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
