@@ -7,7 +7,7 @@
     </style>
 
     <style name="Home" parent="Theme.FullScreen">
-        <item name="android:windowBackground">@color/tomato</item>
+
     </style>
 
 </resources>
