@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#3cdeed</color>
-    <color name="colorPrimaryDark">#34c6d3</color>
-
-    <color name="purple">#5b345f</color>
-    <color name="grey">#e0e0e0</color>
-    
+    <color name="tomato">#f1582a</color>
+    <color name="dark_blue_grey">#122631</color>
 
 </resources>
