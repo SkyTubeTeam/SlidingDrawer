@@ -255,7 +255,7 @@ public class SlidingDrawer extends ViewGroup {
         final int heightSpecSize =  MeasureSpec.getSize(heightMeasureSpec);
 
         if (widthSpecMode == MeasureSpec.UNSPECIFIED || heightSpecMode == MeasureSpec.UNSPECIFIED) {
-            throw new RuntimeException("The Drawer cannot have unspecified dimensions.");
+            throw new IllegalStateException("The Drawer cannot have unspecified dimensions.");
         }
 
         measureChild(viewHandle, widthMeasureSpec, heightMeasureSpec);
