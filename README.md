@@ -13,8 +13,7 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 [More](http://developer.android.com/reference/android/widget/SlidingDrawer.html) :)
 
 
-Setup
------
+## Setup
 
 Add this to your dependencies:
 
@@ -26,8 +25,7 @@ dependencies {
 ```
 
 
-Example
--------
+## Example
 
 ##### In Layout
 
@@ -117,14 +115,12 @@ public final class MainActivity extends AppCompatActivity implements OnDrawerScr
 ```
 
 
-Contact
--------
+## Contact
 
 [Igor Morais](http://igormorais.com)
 
 
-License
--------
+## License
 
 ```
 Copyright 2014 Igor Morais
