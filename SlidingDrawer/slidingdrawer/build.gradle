@@ -29,7 +29,7 @@ android {
 
 dependencies {
 
-    compile 'com.android.support:support-annotations:26.0.0'
+    compile 'com.android.support:support-annotations:26.0.2'
 }
 
 group = 'com.github.moraisigor'
