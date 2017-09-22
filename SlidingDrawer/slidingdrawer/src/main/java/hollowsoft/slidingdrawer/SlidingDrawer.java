@@ -220,8 +220,6 @@ public class SlidingDrawer extends ViewGroup {
         maxMajorVelocity = (int) (MAX_MAJOR_VELOCITY * density + 0.5f);
         maxAcceleration = (int) (MAX_ACCELERATION * density + 0.5f);
         velocityUnits = (int) (VELOCITY_UNITS * density + 0.5f);
-
-        setAlwaysDrawnWithCacheEnabled(false);
     }
 
     @Override
