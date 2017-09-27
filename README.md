@@ -114,6 +114,8 @@ public final class MainActivity extends AppCompatActivity implements OnDrawerScr
 }
 ```
 
+Check the sample for more details.
+
 
 ## Contact
 
