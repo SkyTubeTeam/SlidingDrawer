@@ -20,7 +20,7 @@ Add this to your dependencies:
 ```
 dependencies {
     
-    compile 'com.github.moraisigor:slidingdrawer:1.6.5'
+    compile 'com.github.moraisigor:slidingdrawer:1.6.7'
 }
 ```
 
