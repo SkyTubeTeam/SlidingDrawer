@@ -8,10 +8,10 @@ android {
     defaultConfig {
 
         applicationId 'hollowsoft.sample.slidingdrawer'
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
-        versionName '1.0'
+        versionName '1.0.0'
     }
 
     buildTypes {
