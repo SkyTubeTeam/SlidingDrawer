@@ -15,8 +15,6 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 
 ## Setup
 
-Add this to your dependencies:
-
 ```
 dependencies {
 
