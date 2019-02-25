@@ -7,19 +7,19 @@ plugins {
 apply plugin: 'com.android.library'
 
 group = 'com.github.moraisigor'
-version = '1.7.0'
+version = rootProject.ext.versionName
 
 android {
 
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
-        minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
-        versionName '1.0.0'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
 
     buildTypes {
@@ -115,8 +115,8 @@ bintray {
 
     p.load(project.rootProject.file('local.properties').newDataInputStream())
 
-    user = p.getProperty('bintray.user')
-    key = p.getProperty('bintray.key')
+    key = p.getProperty('key')
+    user = p.getProperty('user')
 
     publish = true
 
@@ -141,7 +141,7 @@ bintray {
             gpg {
 
                 sign = true
-                passphrase = p.getProperty('bintray.password')
+                passphrase = p.getProperty('password')
             }
         }
     }
