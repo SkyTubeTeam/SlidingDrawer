@@ -2,16 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
         applicationId 'hollowsoft.sample.slidingdrawer'
-        minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
-        versionName '1.0.0'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
 
     buildTypes {
@@ -30,5 +30,5 @@ dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
 
     // Widget
-    implementation 'com.github.moraisigor:slidingdrawer:1.7.0'
+    implementation 'com.github.moraisigor:slidingdrawer:1.7.1'
 }
