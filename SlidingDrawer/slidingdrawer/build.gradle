@@ -1,18 +1,16 @@
 plugins {
-
-    id 'com.jfrog.bintray' version '1.7.3'
-    id 'com.github.dcendents.android-maven' version '2.0'
+    id 'com.android.library'
 }
 
-apply plugin: 'com.android.library'
+// apply plugin: 'com.android.library'
 
 group = 'com.github.moraisigor'
 version = rootProject.ext.versionName
 
 android {
+    namespace 'hollowsoft.slidingdrawer'
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
@@ -36,113 +34,4 @@ dependencies {
 
     // Support
     implementation "com.android.support:support-annotations:${rootProject.ext.supportVersion}"
-}
-
-task javadoc(type: Javadoc) {
-
-    source = android.sourceSets.main.java.srcDirs
-
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-
-    classifier = 'javadoc'
-
-    from javadoc.destinationDir
-}
-
-task sourcesJar(type: Jar) {
-
-    from android.sourceSets.main.java.srcDirs
-
-    classifier = 'sources'
-}
-
-artifacts {
-
-    archives javadocJar
-    archives sourcesJar
-}
-
-install {
-
-    repositories.mavenInstaller {
-
-        pom {
-
-            project {
-
-                packaging 'aar'
-
-                name 'SlidingDrawer'
-                description 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
-                url 'https://github.com/MoraisIgor/SlidingDrawer'
-
-                licenses {
-
-                    license {
-
-                        name 'Apache Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0'
-                    }
-                }
-
-                developers {
-
-                    developer {
-
-                        id 'MoraisIgor'
-                        name 'Igor Morais'
-                        email 'igor.morais@hollowsoft.com'
-                    }
-                }
-
-                scm {
-
-                    url 'https://github.com/MoraisIgor/SlidingDrawer'
-                    connection 'https://github.com/MoraisIgor/SlidingDrawer.git'
-                    developerConnection 'https://github.com/MoraisIgor/SlidingDrawer.git'
-                }
-            }
-        }
-    }
-}
-
-bintray {
-
-    Properties p = new Properties()
-
-    p.load(project.rootProject.file('local.properties').newDataInputStream())
-
-    key = p.getProperty('key')
-    user = p.getProperty('user')
-
-    publish = true
-
-    configurations = ['archives']
-
-    pkg {
-
-        repo = 'Maven'
-
-        name = 'SlidingDrawer'
-        desc = 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
-        labels = ['android', 'java', 'widget']
-        licenses = ['Apache-2.0']
-
-        websiteUrl = 'https://github.com/MoraisIgor/SlidingDrawer'
-        issueTrackerUrl = 'https://github.com/MoraisIgor/SlidingDrawer/issues'
-
-        vcsUrl = 'https://github.com/MoraisIgor/SlidingDrawer.git'
-
-        version {
-
-            gpg {
-
-                sign = true
-                passphrase = p.getProperty('password')
-            }
-        }
-    }
 }
