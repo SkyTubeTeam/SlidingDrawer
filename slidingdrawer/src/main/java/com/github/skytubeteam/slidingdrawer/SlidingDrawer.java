@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package hollowsoft.slidingdrawer;
+package com.github.skytubeteam.slidingdrawer;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -52,7 +52,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * content: </p>
  *
  * <pre class="prettyprint">
- * &lt;hollowsoft.slidingdrawer.SlidingDrawer
+ * &lt;com.github.skytubeteam.slidingdrawer.SlidingDrawer
  *     android:id="@+id/drawer"
  *     android:layout_width="match_parent"
  *     android:layout_height="match_parent"
@@ -69,7 +69,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  *     android:layout_width="match_parent"
  *     android:layout_height="match_parent"/&gt;
  *
- * &lt;/hollowsoft.slidingdrawer.SlidingDrawer&gt;
+ * &lt;/com.github.skytubeteam.slidingdrawer.SlidingDrawer&gt;
  * </pre>
  *
  * @author Igor Morais

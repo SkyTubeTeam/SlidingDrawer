@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package hollowsoft.slidingdrawer;
+package com.github.skytubeteam.slidingdrawer;
 
 /**
  * <p> Listener invoked when the drawer is scrolled. </p>

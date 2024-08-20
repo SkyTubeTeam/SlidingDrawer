@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package hollowsoft.slidingdrawer;
+package com.github.skytubeteam.slidingdrawer;
 
 /**
- * <p> Listener invoked when the drawer is opened. </p>
+ * <p> Listener invoked when the drawer is closed. </p>
  *
  * @author Igor Morais
  */
-public interface OnDrawerOpenListener {
+public interface OnDrawerCloseListener {
 
     /**
-     * Invoked when the drawer becomes fully open.
+     * Invoked when the drawer becomes fully closed.
      */
-    void onDrawerOpened();
+    void onDrawerClosed();
 }
