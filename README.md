@@ -18,7 +18,7 @@ The size of the SlidingDrawer defines how much space the content will occupy onc
 ```
 dependencies {
 
-    implementation 'com.github.moraisigor:slidingdrawer:1.7.1'
+    implementation 'com.github.SkyTubeTeam:SlidingDrawer:1.7.1'
 }
 ```
 
@@ -35,7 +35,7 @@ dependencies {
     android:layout_height="match_parent"
     android:background="#f1582a">
     
-    <hollowsoft.slidingdrawer.SlidingDrawer
+    <com.github.skytubeteam.slidingdrawer.SlidingDrawer
         android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -65,7 +65,7 @@ dependencies {
             android:textSize="20sp"
             android:textStyle="bold" />
             
-    </hollowsoft.slidingdrawer.SlidingDrawer>
+    </com.github.skytubeteam.slidingdrawer.SlidingDrawer>
     
 </LinearLayout>
 ```
@@ -139,4 +139,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[1]: https://raw.githubusercontent.com/MoraisIgor/SlidingDrawer/master/Asset/Icon.png
+[1]: https://raw.githubusercontent.com/SkytubeTeam/SlidingDrawer/master/Asset/Icon.png
