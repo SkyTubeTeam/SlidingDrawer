@@ -45,7 +45,7 @@ project.afterEvaluate {
             libraryProject(MavenPublication) {
                 setGroupId 'com.github.SkyTubeTeam'
                 setArtifactId 'SlidingDrawer'
-                version '1.0'
+                version rootProject.ext.versionName
                 artifact bundleReleaseAar
             }
         }
